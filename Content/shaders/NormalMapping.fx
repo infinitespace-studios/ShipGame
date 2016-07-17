@@ -74,7 +74,7 @@ void PlainMappingVS(
     OutTexCoord = InTexCoord;
 }
 
-float4 PlainMappingPS( in float2 TexCoord : TEXCOORD0 ) : COLOR0
+float4 PlainMappingPS(in float4 InPosition    : SV_POSITION, in float2 TexCoord : TEXCOORD0 ) : COLOR0
 {
     return tex2D(TextureSampler, TexCoord);
 }
@@ -153,7 +153,7 @@ void ViewMappingVS(
     OutFacing = saturate(dot(view, InNormal));
 }
 
-float4 ViewMappingPS(in float Facing : TEXCOORD0) : COLOR0
+float4 ViewMappingPS(in float4 InPosition    : SV_POSITION, in float Facing : TEXCOORD0) : COLOR0
 {
     Facing *= Facing;
     Facing *= Facing;

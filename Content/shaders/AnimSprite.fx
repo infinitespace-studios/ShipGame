@@ -25,7 +25,7 @@ void AnimSpriteVS(
     OutTexCoord = InTexCoord;
 }
 
-float4 AnimSpritePS( in float2 TexCoord : TEXCOORD0 ) : COLOR0
+float4 AnimSpritePS(in float4 InPosition     : SV_POSITION, in float2 TexCoord : TEXCOORD0 ) : COLOR0
 {
     float2 tx1 = FrameSize * (FrameOffset.xy + TexCoord);
     float2 tx2 = FrameSize * (FrameOffset.zw + TexCoord);

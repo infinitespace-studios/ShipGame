@@ -98,7 +98,8 @@ void ParticleVS(
     OutSize = size / OutPosition.w * 360;
 }
 
-float4 ParticlePS( 
+float4 ParticlePS(
+	in float4 InPosition    : SV_POSITION,
     in float4 Color     : COLOR0,
     in float4 Rotation  : COLOR1,
 #ifdef XBOX
